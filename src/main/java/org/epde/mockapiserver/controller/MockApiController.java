@@ -131,7 +131,7 @@ public class MockApiController {
         return products;
     }
 
-    @GetMapping("/user/dashboard")
+    @PostMapping("/user/dashboard")
     public Map<String, Object> getUserDashboard(@RequestBody Map<String, Object> request) {
         int userId = (int) request.getOrDefault("userId", 0);
 
@@ -161,7 +161,7 @@ public class MockApiController {
         return response;
     }
 
-    @GetMapping("/products/catalog")
+    @PostMapping("/products/catalog")
     public Map<String, Object> getProductCatalog(@RequestBody Map<String, Object> filters) {
         String category = (String) filters.getOrDefault("category", "All");
         double minPrice = (double) filters.getOrDefault("minPrice", 0.0);
