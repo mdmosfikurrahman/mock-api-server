@@ -131,6 +131,72 @@ public class MockApiController {
         return products;
     }
 
+    @GetMapping("/user/dashboard")
+    public Map<String, Object> getUserDashboard(@RequestBody Map<String, Object> request) {
+        int userId = (int) request.getOrDefault("userId", 0);
+
+        Map<String, Object> response = new HashMap<>();
+
+        Map<String, Object> userInfo = new HashMap<>();
+        userInfo.put("id", userId);
+        userInfo.put("name", request.getOrDefault("name", "Guest User"));
+        userInfo.put("email", request.getOrDefault("email", "guest@example.com"));
+
+        List<Map<String, Object>> activities = Arrays.asList(
+                Map.of("activityId", 1, "description", "Logged in", "timestamp", "2025-02-25T10:00"),
+                Map.of("activityId", 2, "description", "Viewed dashboard", "timestamp", "2025-02-25T10:05"),
+                Map.of("activityId", 3, "description", "Checked notifications", "timestamp", "2025-02-25T10:10")
+        );
+
+        List<Map<String, Object>> notifications = Arrays.asList(
+                Map.of("notificationId", 1, "message", "Welcome to our platform!", "status", "Unread"),
+                Map.of("notificationId", 2, "message", "Your order has been shipped.", "status", "Unread"),
+                Map.of("notificationId", 3, "message", "New promotional offer available!", "status", "Read")
+        );
+
+        response.put("userInfo", userInfo);
+        response.put("recentActivities", activities);
+        response.put("notifications", notifications);
+
+        return response;
+    }
+
+    @GetMapping("/products/catalog")
+    public Map<String, Object> getProductCatalog(@RequestBody Map<String, Object> filters) {
+        String category = (String) filters.getOrDefault("category", "All");
+        double minPrice = (double) filters.getOrDefault("minPrice", 0.0);
+        double maxPrice = (double) filters.getOrDefault("maxPrice", 1000.0);
+        boolean availableOnly = (boolean) filters.getOrDefault("availableOnly", true);
+
+        Map<String, Object> response = new HashMap<>();
+        response.put("category", category);
+        response.put("minPrice", minPrice);
+        response.put("maxPrice", maxPrice);
+        response.put("availableOnly", availableOnly);
+
+        List<Map<String, Object>> products = Arrays.asList(
+                Map.of(
+                        "id", 101, "name", category + " Laptop", "price", 799.99, "available", availableOnly, "rating", 4.5,
+                        "specifications", Map.of("brand", "Brand A", "color", "Black", "warranty", "1 Year")
+                ),
+                Map.of(
+                        "id", 102, "name", category + " Smartphone", "price", 499.99, "available", availableOnly, "rating", 4.3,
+                        "specifications", Map.of("brand", "Brand B", "color", "White", "warranty", "2 Years")
+                ),
+                Map.of(
+                        "id", 103, "name", category + " Tablet", "price", 299.99, "available", availableOnly, "rating", 4.1,
+                        "specifications", Map.of("brand", "Brand C", "color", "Silver", "warranty", "6 Months")
+                )
+        );
+
+        response.put("products", products);
+        response.put("totalProducts", products.size());
+
+        return response;
+    }
+
+
+
 }
 
 
