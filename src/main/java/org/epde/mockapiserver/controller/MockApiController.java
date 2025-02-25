@@ -95,6 +95,42 @@ public class MockApiController {
         status.put("status", "API is running smoothly");
         return status;
     }
+
+    @GetMapping("/user/details")
+    public Map<String, Object> getUserDetails(@RequestBody Map<String, Object> request) {
+        Map<String, Object> user = new HashMap<>();
+        user.put("id", request.getOrDefault("id", 0));
+        user.put("name", request.getOrDefault("name", "Unknown"));
+        user.put("email", request.getOrDefault("email", "unknown@example.com"));
+        return user;
+    }
+
+    @GetMapping("/orders/history")
+    public List<Map<String, Object>> getOrderHistory(@RequestBody Map<String, Object> filters) {
+        List<Map<String, Object>> orders = new ArrayList<>();
+
+        Map<String, Object> order = new HashMap<>();
+        order.put("orderId", UUID.randomUUID().toString());
+        order.put("status", filters.getOrDefault("status", "Processing"));
+        order.put("date", filters.getOrDefault("date", "2025-02-25"));
+
+        orders.add(order);
+        return orders;
+    }
+
+    @GetMapping("/products/recommendations")
+    public List<Map<String, Object>> getRecommendations(@RequestBody Map<String, Object> preferences) {
+        List<Map<String, Object>> products = new ArrayList<>();
+
+        Map<String, Object> product = new HashMap<>();
+        product.put("name", preferences.getOrDefault("category", "Electronics"));
+        product.put("price", 299.99);
+        product.put("rating", 4.5);
+
+        products.add(product);
+        return products;
+    }
+
 }
 
 
