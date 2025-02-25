@@ -134,13 +134,15 @@ public class MockApiController {
     @PostMapping("/user/dashboard")
     public Map<String, Object> getUserDashboard(@RequestBody Map<String, Object> request) {
         int userId = (int) request.getOrDefault("userId", 0);
+        String name = (String) request.getOrDefault("name", "Guest User");
+        String email = (String) request.getOrDefault("email", "guest@example.com");
 
         Map<String, Object> response = new HashMap<>();
 
         Map<String, Object> userInfo = new HashMap<>();
         userInfo.put("id", userId);
-        userInfo.put("name", request.getOrDefault("name", "Guest User"));
-        userInfo.put("email", request.getOrDefault("email", "guest@example.com"));
+        userInfo.put("name", name);
+        userInfo.put("email", email);
 
         List<Map<String, Object>> activities = Arrays.asList(
                 Map.of("activityId", 1, "description", "Logged in", "timestamp", "2025-02-25T10:00"),
@@ -164,8 +166,8 @@ public class MockApiController {
     @PostMapping("/products/catalog")
     public Map<String, Object> getProductCatalog(@RequestBody Map<String, Object> filters) {
         String category = (String) filters.getOrDefault("category", "All");
-        double minPrice = (double) filters.getOrDefault("minPrice", 0.0);
-        double maxPrice = (double) filters.getOrDefault("maxPrice", 1000.0);
+        double minPrice = filters.containsKey("minPrice") ? ((Number) filters.get("minPrice")).doubleValue() : 0.0;
+        double maxPrice = filters.containsKey("maxPrice") ? ((Number) filters.get("maxPrice")).doubleValue() : 1000.0;
         boolean availableOnly = (boolean) filters.getOrDefault("availableOnly", true);
 
         Map<String, Object> response = new HashMap<>();
