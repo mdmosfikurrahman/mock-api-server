@@ -1,0 +1,264 @@
+{
+	"info": {
+		"_postman_id": "c5fa0eb3-0215-4da1-9abb-ee24bb2128fb",
+		"name": "Mock API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21534121",
+		"_collection_link": "https://epde-mj.postman.co/workspace/781e5c41-f96e-42ea-8a62-8331320e0346/collection/21534121-c5fa0eb3-0215-4da1-9abb-ee24bb2128fb?action=share&source=collection_link&creator=21534121"
+	},
+	"item": [
+		{
+			"name": "Get Mock User",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:1234/mockapi/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1234",
+					"path": [
+						"mockapi",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Mock Products",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/mockapi/products",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"mockapi",
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST Mock Order",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"items\": [\"Laptop\", \"Smartphone\"]\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/mockapi/order",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"mockapi",
+						"order"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Mock Status",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/mockapi/status",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"mockapi",
+						"status"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Mock User by ID",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/mockapi/user/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"mockapi",
+						"user",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Mock Product by Request param",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/mockapi/product/details?name=Headphones&price=99.99",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"mockapi",
+						"product",
+						"details"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Headphones"
+						},
+						{
+							"key": "price",
+							"value": "99.99"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UPDATE Mock User with Request Body",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Jane Doe\",\r\n  \"email\": \"janedoe@example.com\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/mockapi/user/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"mockapi",
+						"user",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE Mock Order",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/mockapi/order/550e8400-e29b-41d4-a716-446655440000",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"mockapi",
+						"order",
+						"550e8400-e29b-41d4-a716-446655440000"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PATCH Order Status",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"orderId\": \"550e8400-e29b-41d4-a716-446655440000\",\r\n  \"newStatus\": \"Shipped\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/mockapi/order/550e8400-e29b-41d4-a716-446655440000/status?status=Shipped",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"mockapi",
+						"order",
+						"550e8400-e29b-41d4-a716-446655440000",
+						"status"
+					],
+					"query": [
+						{
+							"key": "status",
+							"value": "Shipped"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
