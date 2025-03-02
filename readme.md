@@ -12,7 +12,7 @@ Ensure you have the following installed:
 ### Clone the Repository
 ```sh
 git clone <repository-url>
-cd mockapi-server
+cd mock-api-server
 ```
 
 ### Build the Project
@@ -25,7 +25,7 @@ gradle build
 Once the build is complete, navigate to the `build/libs` directory and run the JAR file:
 ```sh
 cd build/libs
-java -jar mockapi-server-0.1.jar
+java -jar mock-api-server-0.1.jar
 ```
 
 The server will start on port `1234`.

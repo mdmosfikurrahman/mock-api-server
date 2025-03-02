@@ -1,6 +1,6 @@
 spring:
   application:
-    name: mockapi-server
+    name: mock-api-server
 
 server:
   port: 1234
