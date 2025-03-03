@@ -5,7 +5,9 @@ import org.epde.mockapiserver.dto.response.*;
 import org.epde.mockapiserver.service.MockApiService;
 import org.springframework.stereotype.Service;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.List;
+import java.util.UUID;
 
 @Service
 public class MockApiServiceImpl implements MockApiService {

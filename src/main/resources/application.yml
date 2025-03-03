@@ -7,6 +7,15 @@ server:
   servlet:
     context-path: /api/v1
 
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+
 logging:
+  file:
+    name: logs/application.log
   pattern:
     console: "%d{yyyy-MM-dd hh:mm:ss a} | %highlight(%level) | [%file:%line] - %msg%n"
+    file: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
