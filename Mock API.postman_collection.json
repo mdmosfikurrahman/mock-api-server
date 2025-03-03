@@ -4,7 +4,7 @@
 		"name": "Mock API",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "21534121",
-		"_collection_link": "https://epde-mj.postman.co/workspace/781e5c41-f96e-42ea-8a62-8331320e0346/collection/21534121-c5fa0eb3-0215-4da1-9abb-ee24bb2128fb?action=share&source=collection_link&creator=21534121"
+		"_collection_link": "https://epde-mj.postman.co/workspace/EPDE~781e5c41-f96e-42ea-8a62-8331320e0346/collection/21534121-c5fa0eb3-0215-4da1-9abb-ee24bb2128fb?action=share&source=collection_link&creator=21534121"
 	},
 	"item": [
 		{
@@ -13,93 +13,17 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:1234/mockapi/user",
+					"raw": "http://localhost:1234/api/v1/mock-api/user",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "1234",
 					"path": [
-						"mockapi",
+						"api",
+						"v1",
+						"mock-api",
 						"user"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Get Mock Products",
-			"request": {
-				"auth": {
-					"type": "noauth"
-				},
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:8080/mockapi/products",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"mockapi",
-						"products"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "POST Mock Order",
-			"request": {
-				"auth": {
-					"type": "noauth"
-				},
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n  \"items\": [\"Laptop\", \"Smartphone\"]\r\n}\r\n",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:8080/mockapi/order",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"mockapi",
-						"order"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "GET Mock Status",
-			"request": {
-				"auth": {
-					"type": "noauth"
-				},
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:8080/mockapi/status",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"mockapi",
-						"status"
 					]
 				}
 			},
@@ -114,50 +38,18 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/mockapi/user/1",
+					"raw": "http://localhost:1234/api/v1/mock-api/user/1",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "8080",
+					"port": "1234",
 					"path": [
-						"mockapi",
+						"api",
+						"v1",
+						"mock-api",
 						"user",
 						"1"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "GET Mock Product by Request param",
-			"request": {
-				"auth": {
-					"type": "noauth"
-				},
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:8080/mockapi/product/details?name=Headphones&price=99.99",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"mockapi",
-						"product",
-						"details"
-					],
-					"query": [
-						{
-							"key": "name",
-							"value": "Headphones"
-						},
-						{
-							"key": "price",
-							"value": "99.99"
-						}
 					]
 				}
 			},
@@ -181,16 +73,113 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/mockapi/user/1",
+					"raw": "http://localhost:1234/api/v1/mock-api/user/1",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "8080",
+					"port": "1234",
 					"path": [
-						"mockapi",
+						"api",
+						"v1",
+						"mock-api",
 						"user",
 						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Mock Products",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:1234/api/v1/mock-api/products",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1234",
+					"path": [
+						"api",
+						"v1",
+						"mock-api",
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Mock Product by Request param",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:1234/api/v1/mock-api/product/details?name=Headphones&price=99.99",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1234",
+					"path": [
+						"api",
+						"v1",
+						"mock-api",
+						"product",
+						"details"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Headphones"
+						},
+						{
+							"key": "price",
+							"value": "99.99"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST Mock Order",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"items\": [\"Laptop\", \"Smartphone\"]\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:1234/api/v1/mock-api/order",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1234",
+					"path": [
+						"api",
+						"v1",
+						"mock-api",
+						"order"
 					]
 				}
 			},
@@ -205,14 +194,16 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/mockapi/order/550e8400-e29b-41d4-a716-446655440000",
+					"raw": "http://localhost:1234/api/v1/mock-api/order/550e8400-e29b-41d4-a716-446655440000",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "8080",
+					"port": "1234",
 					"path": [
-						"mockapi",
+						"api",
+						"v1",
+						"mock-api",
 						"order",
 						"550e8400-e29b-41d4-a716-446655440000"
 					]
@@ -228,24 +219,17 @@
 				},
 				"method": "PATCH",
 				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n  \"orderId\": \"550e8400-e29b-41d4-a716-446655440000\",\r\n  \"newStatus\": \"Shipped\"\r\n}\r\n",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
 				"url": {
-					"raw": "http://localhost:8080/mockapi/order/550e8400-e29b-41d4-a716-446655440000/status?status=Shipped",
+					"raw": "http://localhost:1234/api/v1/mock-api/order/550e8400-e29b-41d4-a716-446655440000/status?status=Shipped",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "8080",
+					"port": "1234",
 					"path": [
-						"mockapi",
+						"api",
+						"v1",
+						"mock-api",
 						"order",
 						"550e8400-e29b-41d4-a716-446655440000",
 						"status"
@@ -255,6 +239,212 @@
 							"key": "status",
 							"value": "Shipped"
 						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Mock Status",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:1234/api/v1/mock-api/status",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1234",
+					"path": [
+						"api",
+						"v1",
+						"mock-api",
+						"status"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET User Details By Request Body",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": 5,\r\n  \"name\": \"Alice\",\r\n  \"email\": \"alice@example.com\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:1234/api/v1/mock-api/user/details",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1234",
+					"path": [
+						"api",
+						"v1",
+						"mock-api",
+						"user",
+						"details"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Order History By Request Body",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"status\": \"Delivered\",\r\n  \"date\": \"2025-02-20\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:1234/api/v1/mock-api/orders/history",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1234",
+					"path": [
+						"api",
+						"v1",
+						"mock-api",
+						"orders",
+						"history"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Recommendations by Request Body",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"category\": \"Laptops\",\r\n  \"priceRange\": \"500-1000\",\r\n  \"rating\": 4\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:1234/api/v1/mock-api/products/recommendations",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1234",
+					"path": [
+						"api",
+						"v1",
+						"mock-api",
+						"products",
+						"recommendations"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET User Dashboard by Request Body",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"userId\": 123,\r\n  \"name\": \"John Doe\",\r\n  \"email\": \"john.doe@example.com\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:1234/api/v1/mock-api/user/dashboard",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1234",
+					"path": [
+						"api",
+						"v1",
+						"mock-api",
+						"user",
+						"dashboard"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Products Catalog by Request Body",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"category\": \"Electronics\",\r\n  \"minPrice\": 100.0,\r\n  \"maxPrice\": 1000.0,\r\n  \"availableOnly\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:1234/api/v1/mock-api/products/catalog",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1234",
+					"path": [
+						"api",
+						"v1",
+						"mock-api",
+						"products",
+						"catalog"
 					]
 				}
 			},
