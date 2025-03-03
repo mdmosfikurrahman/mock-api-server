@@ -8,7 +8,7 @@ RUN ./gradlew bootJar --no-daemon
 
 FROM openjdk:17-jdk-slim
 
-EXPOSE 8080
+EXPOSE 1234
 
 COPY --from=build /build/libs/mock-api-server-0.1.jar app.jar
 
